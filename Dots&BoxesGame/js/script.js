@@ -154,18 +154,18 @@ function computer(){
 		}
 
 		//better case
+		else if(arr2.length > 0){
+			computerSelect(arr2[random(0, arr2.length-1)]);
+		}
+
+		//normal case
 		else if(arr1.length > 0){
 			computerSelect(arr1[random(0, arr1.length-1)]);
 		}
 
-		//normal case
+		//worst case
 		else if(arr0.length > 0){
 			computerSelect(arr0[random(0, arr0.length-1)]);
-		}
-
-		//worst case
-		else if(arr2.length > 0){
-			computerSelect(arr2[random(0, arr2.length-1)]);
 		}
 		
 	}, 500);
@@ -209,66 +209,6 @@ function random(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//load();
-// function showGridSizePopup() {
-// 	// Create a popup element
-// 	var popup = document.createElement("div");
-// 	popup.style.position = "fixed";
-// 	popup.style.top = "0";
-// 	popup.style.left = "0";
-// 	popup.style.width = "100%";
-// 	popup.style.height = "100%";
-// 	popup.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-// 	popup.style.display = "flex";
-// 	popup.style.alignItems = "center";
-// 	popup.style.justifyContent = "center";
-  
-// 	// Create a dropdown element
-// 	var dropdown = document.createElement("select");
-// 	dropdown.style.fontSize = "20px";
-// 	dropdown.style.padding = "10px";
-// 	dropdown.style.marginRight = "10px";
-  
-// 	// Add options to the dropdown
-// 	var option1 = document.createElement("option");
-// 	option1.text = "2x2";
-// 	dropdown.add(option1);
-  
-// 	var option2 = document.createElement("option");
-// 	option2.text = "4x4";
-// 	dropdown.add(option2);
-
-// 	var option2 = document.createElement("option");
-// 	option2.text = "10x10";
-// 	dropdown.add(option2);
-  
-// 	// Create a button element
-// 	var button = document.createElement("button");
-// 	button.textContent = "Load";
-// 	button.style.fontSize = "20px";
-// 	button.style.padding = "10px";
-  
-// 	// Add event listener to the button
-// 	button.addEventListener("click", function() {
-// 	  var selectedGridSize = dropdown.value;
-// 	  var size=2
-// 	  if("4x4"===selectedGridSize){
-// 		size=4
-// 	  }
-// 	  if("10x10"===selectedGridSize){
-// 		size=10
-// 	  }
-// 	  load(size);
-// 	  popup.remove();
-// 	});
-  
-// 	// Add the dropdown and button to the popup
-// 	popup.appendChild(dropdown);
-// 	popup.appendChild(button);
-  
-// 	// Add the popup to the body
-// 	document.body.appendChild(popup);
-//   }
 var SelPlayerColor ="#FA8072"
 var SelBotColor ="skyblue"
 function showGridOptionsPopup() {
@@ -307,14 +247,38 @@ function showGridOptionsPopup() {
 	var option1 = document.createElement("option");
 	option1.text = "2x2";
 	gridSizeDropdown.add(option1);
-  
+
 	var option2 = document.createElement("option");
-	option2.text = "4x4";
+	option2.text = "3x3";
 	gridSizeDropdown.add(option2);
   
 	var option3 = document.createElement("option");
-	option3.text = "10x10";
+	option3.text = "4x4";
 	gridSizeDropdown.add(option3);
+
+	var option4 = document.createElement("option");
+	option4.text = "5x5";
+	gridSizeDropdown.add(option4);
+  
+	var option5 = document.createElement("option");
+	option5.text = "6x6";
+	gridSizeDropdown.add(option5);
+
+	var option6 = document.createElement("option");
+	option6.text = "7x7";
+	gridSizeDropdown.add(option6);
+
+	var option7 = document.createElement("option");
+	option7.text = "8x8";
+	gridSizeDropdown.add(option7);
+
+	var option8 = document.createElement("option");
+	option8.text = "9x9";
+	gridSizeDropdown.add(option8);
+
+	var option9 = document.createElement("option");
+	option9.text = "10x10";
+	gridSizeDropdown.add(option9);
   
 	var playerColorLabel = document.createElement("label");
 	playerColorLabel.textContent = "Player Color:";
@@ -354,17 +318,35 @@ function showGridOptionsPopup() {
 	  var selectedBotColor = botColorInput.value;
 	  var size=2
 	  console.log(selectedPlayerColor);
+	  if("3x3"===selectedGridSize){
+		size=3
+	  } 
 	  if("4x4"===selectedGridSize){
 		size=4
+	  }
+	  if("5x5"===selectedGridSize){
+		size=5
+	  }
+	  if("6x6"===selectedGridSize){
+		size=6
+	  }
+	  if("7x7"===selectedGridSize){
+		size=7
+	  }
+	  if("8x8"===selectedGridSize){
+		size=8
+	  }
+	  if("9x9"===selectedGridSize){
+		size=9
 	  }
 	  if("10x10"===selectedGridSize){
 		size=10
 	  }
 	  if("#000000" != selectedPlayerColor){
-		SelPlayerColor=selectedPlayerColor
+		SelPlayerColor = selectedPlayerColor
 	  }
 	  if("#000000" != selectedBotColor){
-		SelBotColor=selectedBotColor
+		SelBotColor = selectedBotColor
 	  }
 	  $(".player2").css('color',SelPlayerColor);
 	  $(".player1").css('color',SelBotColor);
