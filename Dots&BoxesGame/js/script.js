@@ -101,10 +101,11 @@ function acquire(id){
 
 	$(".player2").text("You : " + you);
 	$(".player1").text("Computer : " + comp);
+	console.log(boxes);
 
 	var full = true;
 	for(var i=boxes.length-1; i>=0; i--){
-		if(boxes[i] != full){
+		if(boxes[i] != "full"){
 			full = false;
 			break;
 		}
@@ -268,7 +269,7 @@ function random(min, max){
 // 	// Add the popup to the body
 // 	document.body.appendChild(popup);
 //   }
-var SelPlayerColor ="salmon"
+var SelPlayerColor ="#FA8072"
 var SelBotColor ="skyblue"
 function showGridOptionsPopup() {
 	var popup = document.createElement("div");
@@ -365,8 +366,8 @@ function showGridOptionsPopup() {
 	  if("#000000" != selectedBotColor){
 		SelBotColor=selectedBotColor
 	  }
-	  $(".player2").css('color',selectedPlayerColor);
-	$(".player1").css('color',selectedBotColor);
+	  $(".player2").css('color',SelPlayerColor);
+	  $(".player1").css('color',SelBotColor);
 	  load(size//,
 		 //selectedPlayerColor,
 		  //selectedBotColor
