@@ -365,6 +365,8 @@ function showGridOptionsPopup() {
 	  if("#000000" != selectedBotColor){
 		SelBotColor=selectedBotColor
 	  }
+	  $(".player2").css('color',selectedPlayerColor);
+	$(".player1").css('color',selectedBotColor);
 	  load(size//,
 		 //selectedPlayerColor,
 		  //selectedBotColor
