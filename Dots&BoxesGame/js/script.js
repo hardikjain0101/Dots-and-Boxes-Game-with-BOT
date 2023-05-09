@@ -89,10 +89,10 @@ function acquire(id){
 
 	var color;
 	if(turn){
-		color = "salmon";
+		color = SelPlayerColor//"salmon";
 		you++;
 	}else{
-		color = "skyblue";
+		color = SelBotColor//"skyblue";
 		comp++;
 	}
 	
@@ -268,6 +268,8 @@ function random(min, max){
 // 	// Add the popup to the body
 // 	document.body.appendChild(popup);
 //   }
+var SelPlayerColor ="salmon"
+var SelBotColor ="skyblue"
 function showGridOptionsPopup() {
 	var popup = document.createElement("div");
 	popup.style.position = "fixed";
@@ -333,6 +335,7 @@ function showGridOptionsPopup() {
   
 	var botColorInput = document.createElement("input");
 	botColorInput.type = "color";
+	//botColorInput.value=
 	botColorInput.style.fontSize = "20px";
 	botColorInput.style.padding = "10px";
 	botColorInput.style.marginBottom = "20px";
@@ -349,12 +352,18 @@ function showGridOptionsPopup() {
 	  var selectedPlayerColor = playerColorInput.value;
 	  var selectedBotColor = botColorInput.value;
 	  var size=2
-	  //console.log(selected);
+	  console.log(selectedPlayerColor);
 	  if("4x4"===selectedGridSize){
 		size=4
 	  }
 	  if("10x10"===selectedGridSize){
 		size=10
+	  }
+	  if("#000000" != selectedPlayerColor){
+		SelPlayerColor=selectedPlayerColor
+	  }
+	  if("#000000" != selectedBotColor){
+		SelBotColor=selectedBotColor
 	  }
 	  load(size//,
 		 //selectedPlayerColor,
